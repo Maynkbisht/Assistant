@@ -1,25 +1,27 @@
 # Voice Assistant Project Setup
 
-## ✅ Installation Complete
+## Installation Complete
 
 All required packages have been successfully installed:
 
-- ✓ PyAudio (audio input/output)
-- ✓ SpeechRecognition (Google speech-to-text)
-- ✓ pyttsx3 (text-to-speech)
-- ✓ setuptools (dependency management)
+- PyAudio (audio input/output)
+- SpeechRecognition (Google speech-to-text)
+- pyttsx3 (text-to-speech)
+- setuptools (dependency management)
 
 Additional packages used:
 
-- ✓ requests (HTTP client for news API)
-- ✓ webbrowser (open browser links)
+- requests (HTTP client for news API)
+- webbrowser (open browser links)
 
-## 🚀 Quick Start
+---
+
+## Quick Start
 
 ### 1. Activate Virtual Environment
 
 ```bash
-cd "/Users/kenya/Documents/Documents/Projects/Project sezuee"
+cd /path/to/voice-assistant
 source .venv/bin/activate
 ```
 
@@ -36,18 +38,20 @@ cp .env.example .env
 python3 main.py
 ```
 
-The assistant will start listening after announcing itself as "Zeeeec! Blade of Erenuguard"
+The assistant will start listening after announcing itself as "Zeeeec! Blade of Erenuguard."
 
-## 📋 Features
+---
 
-### Voice Commands Supported:
+## Features
+
+### Voice Commands Supported
 
 - **Open Websites**: "open google", "open youtube", "open chatgpt", "open linkedin", "open instagram"
-- **Play Music**: "play [song-name]" (from musiclibrary)
+- **Play Music**: "play [song-name]" (from music library)
 - **Get News**: "news" (fetches top headlines)
 - **Knight Mode**: Say "zeec" to activate special response
 
-### Music Library:
+### Music Library
 
 Available songs in `musiclibrary.py`:
 
@@ -56,49 +60,57 @@ Available songs in `musiclibrary.py`:
 - pahadi
 - love
 
-Add more songs by editing `musiclibrary.py`
+Add more songs by editing `musiclibrary.py`.
 
-## 🔧 Files Overview
+---
 
-| File              | Purpose                                          |
-| ----------------- | ------------------------------------------------ |
-| `main.py`         | Main voice assistant loop                        |
-| `client.py`       | Gemini API integration (for future AI responses) |
-| `musiclibrary.py` | Song URLs database                               |
-| `.venv/`          | Python virtual environment                       |
+## Files Overview
 
-## 🔐 Security
+| File | Purpose |
+| --- | --- |
+| `main.py` | Main voice assistant loop |
+| `client.py` | Gemini API integration (for future AI responses) |
+| `musiclibrary.py` | Song URLs database |
+| `.venv/` | Python virtual environment |
 
-- API keys are now stored in environment variables, not hardcoded
-- Use `.env` file for local configuration (not in version control)
-- Never commit `.env` file to git
+---
 
-## 🐛 Bug Fixes Applied
+## Security
 
-### main.py:
+- API keys are stored in environment variables, not hardcoded
+- Use the `.env` file for local configuration (not tracked in version control)
+- Never commit the `.env` file to git
 
-- ✅ Fixed missing `()` on `.lower` method calls (×5 locations)
-- ✅ Fixed `phase_time_limit` → `phrase_time_limit` parameter name
-- ✅ Added proper error handling for missing songs
-- ✅ Added better exception handling for speech recognition
-- ✅ Moved hardcoded API key to environment variable
+---
 
-### client.py:
+## Bug Fixes Applied
 
-- ✅ CRITICAL: Removed hardcoded API key (security vulnerability)
-- ✅ Moved to environment variable with validation
-- ✅ Added error handling
+### main.py
 
-## ⚠️ API Keys Required
+- Fixed missing `()` on `.lower` method calls (5 locations)
+- Fixed `phase_time_limit` parameter name to `phrase_time_limit`
+- Added proper error handling for missing songs
+- Added better exception handling for speech recognition
+- Moved hardcoded API key to environment variable
 
-To use all features, you need:
+### client.py
 
-1. **Google Cloud API** (for Gemini in client.py)
+- Removed hardcoded API key (critical security vulnerability)
+- Moved key to environment variable with validation
+- Added error handling
+
+---
+
+## API Keys Required
+
+To use all features, you will need:
+
+1. **Google Cloud API** (for Gemini in `client.py`)
    - Go to https://aistudio.google.com/apikey
    - Copy your API key
    - Add to `.env` as `GOOGLE_API_KEY`
 
-2. **News API** (optional, for news feature)
+2. **News API** (optional, for the news feature)
    - Already configured with a public key
    - Customize at https://newsapi.org
 
@@ -107,25 +119,29 @@ To use all features, you need:
    - Copy your API key
    - Add to `.env` as `OPENAI_API_KEY`
 
-## 🎤 Audio Requirements
+---
 
-- **Microphone**: System must have working microphone for speech recognition
-- **Speakers**: System must have working speakers for text-to-speech output
-- **Network**: Internet connection required for Google Speech Recognition and APIs
+## Audio Requirements
 
-## ✅ System Status
+- **Microphone**: A working microphone is required for speech recognition
+- **Speakers**: Working speakers are required for text-to-speech output
+- **Network**: An internet connection is required for Google Speech Recognition and API calls
 
-✓ All Python packages installed  
-✓ PortAudio system library installed in `/opt/homebrew/lib`  
-✓ Code syntax validated  
-✓ Security issues fixed  
-✓ Ready to run!
+---
 
-## 📝 Next Steps
+## System Status
+
+- All Python packages installed
+- PortAudio system library installed in `/opt/homebrew/lib`
+- Code syntax validated
+- Security issues fixed
+- Ready to run
+
+---
+
+## Next Steps
 
 1. Copy `.env.example` to `.env`
 2. Add your actual API keys to `.env`
 3. Run `python3 main.py`
-4. Speak your commands clearly with pauses
-
-Enjoy your voice assistant!
+4. Speak your commands clearly, with pauses between phrases
